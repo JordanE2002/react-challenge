@@ -1,3 +1,4 @@
+import React from 'react';
 import './ProductSorting.css';
 
 export default function ProductSorting({ sortOption, setSortOption }) {
