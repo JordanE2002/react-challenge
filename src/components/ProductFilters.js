@@ -12,10 +12,14 @@ const ProductFilters = ({
   setInStockOnly,
   categories
 }) => {
+  const isCategoryActive = selectedCategory && selectedCategory.trim() !== '';
+  const isPriceActive = (minPrice && minPrice > 0) || (maxPrice && maxPrice > 0);
+  const isStockActive = inStockOnly;
+
   return (
     <>
       {/* Category Filter */}
-      <div>
+      <div className={`filter-control ${isCategoryActive ? 'active' : ''}`}>
         <label htmlFor="category-filter">Category:</label>
         <select
           id="category-filter"
@@ -32,7 +36,7 @@ const ProductFilters = ({
       </div>
 
       {/* Price Range */}
-      <div className="price-range">
+      <div className={`price-range ${isPriceActive ? 'active' : ''}`}>
         <label>Price:</label>
         <input
           type="number"
@@ -52,7 +56,7 @@ const ProductFilters = ({
       </div>
 
       {/* In Stock Only */}
-      <div className="in-stock">
+      <div className={`in-stock ${isStockActive ? 'active' : ''}`}>
         <input
           type="checkbox"
           id="in-stock-only"

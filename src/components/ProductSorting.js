@@ -2,10 +2,17 @@ import React from 'react';
 import './ProductSorting.css';
 
 export default function ProductSorting({ sortOption, setSortOption }) {
+  // Active only if a sort option is actually selected
+  const isActive = sortOption && sortOption.trim() !== '';
+
   return (
-    <div className="sort-container">
+    <div className={`sort-container ${isActive ? 'active' : ''}`}>
       <label htmlFor="sort">Sort By:</label>
-      <select id="sort" value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
+      <select
+        id="sort"
+        value={sortOption}
+        onChange={(e) => setSortOption(e.target.value)}
+      >
         <option value="">None</option>
         <option value="price-asc">Price: Low to High</option>
         <option value="price-desc">Price: High to Low</option>

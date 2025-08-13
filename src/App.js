@@ -87,12 +87,13 @@ function App() {
               />
               <ClearFiltersButton onClick={handleClearFilters} />
               <ClearSearchButton onClick={handleClearSearch} />
+              
+              {/* Moved ProductSorting inside filters-group */}
+              <ProductSorting
+                sortOption={sortOption}
+                setSortOption={setSortOption}
+              />
             </div>
-
-            <ProductSorting
-              sortOption={sortOption}
-              setSortOption={setSortOption}
-            />
           </div>
 
           <div className="table-wrapper">
