@@ -1,10 +1,29 @@
-/* === Filters + search bar === */
+/* Highlight active filter wrapper - color only */
+.filter-control.active,
+.price-range.active,
+.in-stock.active,
+.search-wrapper.active,
+.sort-container.active {
+   background-color: #d6ebff;
+}
+
+.filter-control.active label,
+.price-range.active label,
+.in-stock.active label,
+.sort-container.active label {
+  color: #0077cc;
+}
+
+
+
+/* === Filters + search + sort bar === */
 .filter-container {
   margin-bottom: 1.5rem;
   background: #f9f9f9;
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 10px;
+
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -44,12 +63,6 @@
   margin-right: 0.5rem;
 }
 
-.filter-control select {
-  min-width: 120px;
-  padding: 0.45rem 0.7rem;
-}
-
-/* Focus states */
 .filters-group select:focus,
 .filters-group input[type="number"]:focus {
   outline: none;
@@ -75,7 +88,7 @@
   cursor: pointer;
 }
 
-/* === Search wrapper === */
+/* === Search wrapper inside filters-group === */
 .search-wrapper {
   display: flex;
   align-items: center;
@@ -96,6 +109,33 @@
 }
 
 .search-input:focus {
+  outline: none;
+  border-color: #888;
+}
+
+/* === Sorting dropdown === */
+.sort-container {
+  flex: 0 0 180px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.sort-container select {
+  padding: 0.45rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color .2s ease;
+  min-width: 120px;
+  box-sizing: border-box;
+}
+
+.sort-container select:focus {
   outline: none;
   border-color: #888;
 }
@@ -178,7 +218,8 @@
   border: 0;
 }
 
-/* === Table wrapper === */
+
+/* === Table wrapper for horizontal overflow (responsive) === */
 .table-wrapper {
   overflow-x: auto;
   background: #fff;
@@ -244,7 +285,7 @@
   font-weight: 600;
 }
 
-/* Empty state */
+/* Empty state (if no results) */
 .no-results {
   padding: 1rem;
   color: #555;
@@ -280,6 +321,7 @@
   background-color: #c62828;
 }
 
+
 .loading {
   font-size: 18px;
   color: #555;
@@ -287,7 +329,13 @@
   text-align: center;
 }
 
-/* === Responsive adjustments === */
+
+
+
+
+
+
+
 @media (max-width: 768px) {
   .filter-container {
     flex-direction: column;
@@ -303,6 +351,7 @@
   }
 
   .filters-group > *,
+  .sort-container,
   .price-range,
   .in-stock {
     width: 100%;
@@ -311,7 +360,8 @@
     align-items: stretch;
   }
 
-  .search-wrapper {
+  .search-wrapper,
+  .sort-container {
     width: 100%;
     max-height: 50px;
     margin: 0 auto;
@@ -364,7 +414,10 @@
     gap: 0.5rem;
   }
 
-  .search-wrapper {
+  .search-wrapper,
+  .sort-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
     margin: 0;
     padding: 0;
     height: auto;
@@ -372,7 +425,8 @@
     align-items: center;
   }
 
-  .search-input {
+  .search-input,
+  .sort-container select {
     margin: 0;
     vertical-align: middle;
   }
@@ -395,4 +449,10 @@
     flex: 1 1 300px;
     min-width: 280px;
   }
+
+  .sort-container {
+    flex: 0 0 220px;
+  }
 }
+
+

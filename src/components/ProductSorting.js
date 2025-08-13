@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProductSorting.css';
+
 
 export default function ProductSorting({ sortOption, setSortOption }) {
   // Active only if a sort option is selected (not empty)
