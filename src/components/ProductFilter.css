@@ -1,25 +1,10 @@
-
-select.active,
-.price-range.active,
-.in-stock.active {
-  border: 2px solid #0077cc;
-  background-color: #eef6ff;
-  border-radius: 4px;
-}
-
-.in-stock.active label {
-  font-weight: bold;
-  color: #0077cc;
-}
-
-/* === Filters + search + sort bar === */
+/* === Filters + search bar === */
 .filter-container {
   margin-bottom: 1.5rem;
   background: #f9f9f9;
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 10px;
-
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -59,6 +44,12 @@ select.active,
   margin-right: 0.5rem;
 }
 
+.filter-control select {
+  min-width: 120px;
+  padding: 0.45rem 0.7rem;
+}
+
+/* Focus states */
 .filters-group select:focus,
 .filters-group input[type="number"]:focus {
   outline: none;
@@ -84,7 +75,7 @@ select.active,
   cursor: pointer;
 }
 
-/* === Search wrapper inside filters-group === */
+/* === Search wrapper === */
 .search-wrapper {
   display: flex;
   align-items: center;
@@ -105,33 +96,6 @@ select.active,
 }
 
 .search-input:focus {
-  outline: none;
-  border-color: #888;
-}
-
-/* === Sorting dropdown === */
-.sort-container {
-  flex: 0 0 180px;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-.sort-container select {
-  padding: 0.45rem 0.7rem;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: border-color .2s ease;
-  min-width: 120px;
-  box-sizing: border-box;
-}
-
-.sort-container select:focus {
   outline: none;
   border-color: #888;
 }
@@ -214,8 +178,7 @@ select.active,
   border: 0;
 }
 
-
-/* === Table wrapper for horizontal overflow (responsive) === */
+/* === Table wrapper === */
 .table-wrapper {
   overflow-x: auto;
   background: #fff;
@@ -281,7 +244,7 @@ select.active,
   font-weight: 600;
 }
 
-/* Empty state (if no results) */
+/* Empty state */
 .no-results {
   padding: 1rem;
   color: #555;
@@ -317,7 +280,6 @@ select.active,
   background-color: #c62828;
 }
 
-
 .loading {
   font-size: 18px;
   color: #555;
@@ -325,13 +287,7 @@ select.active,
   text-align: center;
 }
 
-
-
-
-
-
-
-
+/* === Responsive adjustments === */
 @media (max-width: 768px) {
   .filter-container {
     flex-direction: column;
@@ -347,7 +303,6 @@ select.active,
   }
 
   .filters-group > *,
-  .sort-container,
   .price-range,
   .in-stock {
     width: 100%;
@@ -356,8 +311,7 @@ select.active,
     align-items: stretch;
   }
 
-  .search-wrapper,
-  .sort-container {
+  .search-wrapper {
     width: 100%;
     max-height: 50px;
     margin: 0 auto;
@@ -410,10 +364,7 @@ select.active,
     gap: 0.5rem;
   }
 
-  .search-wrapper,
-  .sort-container {
-    margin-bottom: 0;
-    padding-bottom: 0;
+  .search-wrapper {
     margin: 0;
     padding: 0;
     height: auto;
@@ -421,8 +372,7 @@ select.active,
     align-items: center;
   }
 
-  .search-input,
-  .sort-container select {
+  .search-input {
     margin: 0;
     vertical-align: middle;
   }
@@ -444,9 +394,5 @@ select.active,
   .search-wrapper {
     flex: 1 1 300px;
     min-width: 280px;
-  }
-
-  .sort-container {
-    flex: 0 0 220px;
   }
 }

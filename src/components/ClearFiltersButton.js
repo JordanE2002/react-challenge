@@ -1,4 +1,5 @@
 import React from 'react';
+import './ClearButtons.css';
 
 const ClearFiltersButton = ({ onClick }) => {
   return (

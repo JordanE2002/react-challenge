@@ -42,7 +42,9 @@ const ProductFilters = ({
           type="number"
           placeholder="Min"
           value={minPrice ?? ''}
-          onChange={(e) => setMinPrice(e.target.value ? Number(e.target.value) : '')}
+          onChange={(e) =>
+            setMinPrice(e.target.value ? Number(e.target.value) : '')
+          }
           min="0"
         />
         <span>-</span>
@@ -50,7 +52,9 @@ const ProductFilters = ({
           type="number"
           placeholder="Max"
           value={maxPrice ?? ''}
-          onChange={(e) => setMaxPrice(e.target.value ? Number(e.target.value) : '')}
+          onChange={(e) =>
+            setMaxPrice(e.target.value ? Number(e.target.value) : '')
+          }
           min="0"
         />
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import './ProductSorting.css';
 
 export default function ProductSorting({ sortOption, setSortOption }) {
-  // Active only if a sort option is actually selected
+  // Active only if a sort option is selected (not empty)
   const isActive = sortOption && sortOption.trim() !== '';
 
   return (
