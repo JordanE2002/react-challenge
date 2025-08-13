@@ -8,6 +8,7 @@ import ProductSearch from './components/ProductSearch';
 import ClearFiltersButton from './components/ClearFiltersButton';
 import ClearSearchButton from './components/ClearSearchButton';
 
+
 import useProductFilters from './hooks/useProductFilters';
 import useProductSorting from './hooks/useProductSorting';
 import useProductSearch from './hooks/useProductSearch';
