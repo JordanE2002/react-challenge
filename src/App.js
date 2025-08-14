@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import productsData from './products';
+import './components/Main.css';
 
 import ProductFilters from './components/ProductFilters';
 import ProductSorting from './components/ProductSorting';

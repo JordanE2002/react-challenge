@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProductFilter.css';
+import './Main.css';
 
 const ProductFilters = ({
   selectedCategory,
